@@ -1,0 +1,74 @@
+body{
+    font-family: "Inter", sans-serif;
+    margin:0;
+}
+
+#app{
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#valueProp{
+    margin-bottom: 1.5rem;
+}
+
+#linkList{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+button{
+    padding: .5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #1E90FF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #4169E1;
+}
+
+input{
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid #1E90FF;
+    margin-bottom: 1rem;
+}
+
+h1{
+    text-align: center;
+}
+
+#header{
+    padding: .2rem;
+    background-color: #bed8f3;
+}
+
+#boldText{
+    margin-bottom: -.5rem;
+    font-weight: bold;
+}
+
+#halfwayPointCoordinates{
+    margin-bottom: 0rem;
+}
+
+#results{
+    visibility: hidden;
+}
+
+#viewHalfwayPoint{
+    font-size: .8rem;
+}
