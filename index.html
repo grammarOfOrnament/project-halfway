@@ -6,6 +6,7 @@
     <title>Halfway</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="/Icons/location-icon.svg">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;600;700&display=swap" rel="stylesheet">
@@ -14,9 +15,12 @@
 </head>
 
 <body>
-    
+    <div id="page-content">
     <div id="header">
-        <h1>Halfway</h1>
+        <div id="heading-container">
+            <h1>Halfway</h1>
+            <p>Relationships are a two-way street.</p>
+        </div>
     </div>
 
     <div id="app">
@@ -24,34 +28,42 @@
 
         <div id="form">
             <label for="firstLocationInput">First Address</label>
-            <input type="text" id="firstLocationInput" name="firstLocationInput" placeholder="70 Vanderbilt Street, New York, NY" autocomplete="off">
+            <input type="text" id="firstLocationInput" name="firstLocationInput" placeholder="1 Normal Avenue, Montclair, NJ" autocomplete="off">
             <label for="secondLocationInput">Second Address</label>
-            <input type="text" id="secondLocationInput" name="secondLocationInput" placeholder="28 Lafayette Avenue, Los Angeles, CA" autocomplete="off">
-            <button type="button" onclick="getLocation()">Find Halfway Point</button>
+            <input type="text" id="secondLocationInput" name="secondLocationInput" placeholder="1 Castle Point Terrace, Hoboken, NJ" autocomplete="off">
         </div>
 
         <div id="results">
-        <p id="boldText">Halfway Point</p>
-        <p>Use the halfway point to find places nearby.</p>
+        <!-- <p id="boldText">Halfway Point</p>
+        <p>Use the halfway point to find places nearby.</p> -->
 
         <!-- Embed a map showing a route Location 1 to Halfway Point to Location 2 -->
         <p id="halfwayPointCoordinates"></p>
         <a id="viewHalfwayPoint" href="#">View on Google Maps</a>
 
-        <div id="linkList">
-            <a id="thingsToDo" href="#">Things to do</a>
-            <a id="restaurants" href="#">Restaurants</a>
-            <a id="coffeeShops" href="#">Coffee Shops</a>
-            <a id="museums" href="#">Museums</a>
-            <a id="bookStores" href="#">Book Stores</a>
-            <a id="libraries" href="#">Libraries</a>
-            <a id="scenicViews" href="#">Scenic Views</a>
-            <a id="parks" href="#">Parks</a>
-            <a id="shopping" href="#">Shopping</a>
-        </div>
         </div> 
     </div>
+    
+    <div id="linkList">
+        <p>Use the coordinates to find outings nearby or follow the links for suggestions:</p>
+        <a class="button-link" id="thingsToDo" href="#"><span>Things to do</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="restaurants" href="#"><span>Restaurants</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="coffeeShops" href="#"><span>Coffee Shops</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="museums" href="#"><span>Museums</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="bookStores" href="#"><span>Book Stores</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="libraries" href="#"><span>Libraries</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="scenicViews" href="#"><span>Scenic Views</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="parks" href="#"><span>Parks</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+        <a class="button-link" id="shopping" href="#"><span>Shopping Malls</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
+    </div>
 
+    <div class="stickyBottomMenu">
+        <button style="display: flex; align-items: center; justify-content: center; padding-left: 4rem; padding-right: 4rem;" type="button" onclick="getLocation()">
+            <span style="padding-right: .7rem;" class="material-symbols-outlined">search</span>
+            <span>Find Halfway Point</span>
+        </button>
+    </div>
+</div>
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR49VxuvbhRoWSP5slRrooGBkZoTHSK1U&libraries=places&callback=initMap" async defer></script>
 

@@ -60,6 +60,7 @@ let shopping = document.getElementById("shopping");
 let halfwayPointCoordinates = document.getElementById("halfwayPointCoordinates");
 let viewHalfwayPoint = document.getElementById("viewHalfwayPoint");
 let results = document.getElementById("results");
+let linkList = document.getElementById("linkList");
 
 const firstLocationInputElement = document.getElementById("firstLocationInput");
 const secondLocationInputElement = document.getElementById("secondLocationInput");
@@ -103,22 +104,25 @@ function getLocation() {
         console.log("Midpoint Latitude: " + halfwayPointLat);
         console.log("Midpoint Longitude: " + halfwayPointLng);
 
-        halfwayPointCoordinates.innerHTML = `Your halfway point is <b>${halfwayPointLat}, ${halfwayPointLng}</b>.`;
+        halfwayPointCoordinates.innerHTML = `Halfway between ${firstLocationInputElement.value} and ${secondLocationInputElement.value} is <b>${halfwayPointLat}, ${halfwayPointLng}</b>`;
         viewHalfwayPoint.setAttribute("href", `https://www.google.com/maps/search/${halfwayPointLat},+${halfwayPointLng}/@${halfwayPointLat},${halfwayPointLng},13z`);
 
-        thingsToDo.setAttribute("href", `https://www.google.com/maps/search/things+to+do+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        restaurants.setAttribute("href", `https://www.google.com/maps/search/restaurants+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        museums.setAttribute("href", `https://www.google.com/maps/search/museums+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        bookStores.setAttribute("href", `https://www.google.com/maps/search/book+stores+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        libraries.setAttribute("href", `https://www.google.com/maps/search/libraries+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        scenicViews.setAttribute("href", `https://www.google.com/maps/search/scenic+views+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        parks.setAttribute("href", `https://www.google.com/maps/search/parks+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
-        shopping.setAttribute("href", `https://www.google.com/maps/search/shopping+near+${halfwayPointLat},+${halfwayPointLng}@${halfwayPointLat},${halfwayPointLng},13z`);
+        thingsToDo.setAttribute("href", `https://www.google.com/maps/search/things+to+do/@${halfwayPointLat},${halfwayPointLng},15z`);
+        restaurants.setAttribute("href", `https://www.google.com/maps/search/restaurants/@${halfwayPointLat},${halfwayPointLng},15z`);
+        coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops/@${halfwayPointLat},${halfwayPointLng},15z`);
+        museums.setAttribute("href", `https://www.google.com/maps/search/museums/@${halfwayPointLat},${halfwayPointLng},15z`);
+        bookStores.setAttribute("href", `https://www.google.com/maps/search/book+stores/@${halfwayPointLat},${halfwayPointLng},15z`);
+        libraries.setAttribute("href", `https://www.google.com/maps/search/libraries/@${halfwayPointLat},${halfwayPointLng},15z`);
+        scenicViews.setAttribute("href", `https://www.google.com/maps/search/scenic+views/@${halfwayPointLat},${halfwayPointLng},15z`);
+        parks.setAttribute("href", `https://www.google.com/maps/search/parks/@${halfwayPointLat},${halfwayPointLng},15z`);
+        shopping.setAttribute("href", `https://www.google.com/maps/search/shopping/@${halfwayPointLat},${halfwayPointLng},15z`);
 
-        results.setAttribute("style", "visibility: visible;");
+        results.setAttribute("style", "display: block;");
+        linkList.setAttribute("style", "display: block;");
     })
 })
+
+// https://www.google.com/maps/search/restaurants/@${latitude},${longitude},15z
 
 
 }
