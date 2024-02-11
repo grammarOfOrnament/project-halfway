@@ -15,33 +15,38 @@
 </head>
 
 <body>
-    <div id="page-content">
     <div id="header">
+
+    </div>
+
+    <div id="page-content">
         <div id="heading-container">
             <h1>Halfway</h1>
             <p>Relationships are a two-way street.</p>
         </div>
-    </div>
+    
 
-    <div id="app">
-        <p id="valueProp">Plan your next outing halfway between two places.</p>
+    <div id="app-container">
+        <div id="app">
+            <p id="valueProp">Plan your next outing halfway between two places.</p>
 
-        <div id="form">
-            <label for="firstLocationInput">First Address</label>
-            <input type="text" id="firstLocationInput" name="firstLocationInput" placeholder="1 Normal Avenue, Montclair, NJ" autocomplete="off">
-            <label for="secondLocationInput">Second Address</label>
-            <input type="text" id="secondLocationInput" name="secondLocationInput" placeholder="1 Castle Point Terrace, Hoboken, NJ" autocomplete="off">
+            <div id="form">
+                <label for="firstLocationInput">First Address</label>
+                <input type="text" id="firstLocationInput" name="firstLocationInput" placeholder="1 Normal Avenue, Montclair, NJ" autocomplete="off">
+                <label for="secondLocationInput">Second Address</label>
+                <input type="text" id="secondLocationInput" name="secondLocationInput" placeholder="1 Castle Point Terrace, Hoboken, NJ" autocomplete="off">
+            </div>
+
+            <div id="results">
+            <!-- <p id="boldText">Halfway Point</p>
+            <p>Use the halfway point to find places nearby.</p> -->
+
+            <!-- Embed a map showing a route Location 1 to Halfway Point to Location 2 -->
+            <p id="halfwayPointCoordinates"></p>
+            <a id="viewHalfwayPoint" href="#">View on Google Maps</a>
+
+            </div> 
         </div>
-
-        <div id="results">
-        <!-- <p id="boldText">Halfway Point</p>
-        <p>Use the halfway point to find places nearby.</p> -->
-
-        <!-- Embed a map showing a route Location 1 to Halfway Point to Location 2 -->
-        <p id="halfwayPointCoordinates"></p>
-        <a id="viewHalfwayPoint" href="#">View on Google Maps</a>
-
-        </div> 
     </div>
     
     <!-- <div id="linkList">
@@ -57,13 +62,16 @@
         <a class="button-link" target="_blank" id="shopping" href="#"><span>Shopping</span><span class="button-link-icon material-symbols-outlined">arrow_forward</span></a>
     </div> -->
 
-    <div class="stickyBottomMenu">
-        <button style="display: flex; align-items: center; justify-content: center; padding-left: 4rem; padding-right: 4rem;" type="button" onclick="getLocation()">
-            <span style="padding-right: .7rem;" class="material-symbols-outlined">search</span>
-            <span>Find Halfway Point</span>
-        </button>
-    </div>
+    
 </div>
+
+<div class="stickyBottomMenu">
+    <button style="display: flex; align-items: center; justify-content: center; padding-left: 4rem; padding-right: 4rem;" type="button" onclick="getLocation()">
+        <span style="padding-right: .7rem;" class="material-symbols-outlined">search</span>
+        <span>Find Halfway Point</span>
+    </button>
+</div>
+
     <script src="script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR49VxuvbhRoWSP5slRrooGBkZoTHSK1U&libraries=places&callback=initMap" async defer></script>
 

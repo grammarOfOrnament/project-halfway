@@ -9,6 +9,7 @@ body{
     padding-bottom: 4rem;
     background: linear-gradient(180deg, #0D3EEA 0%, #0085FF 100%);
     color:white;
+    height: 5rem;
     /* display: flex;
     justify-content: center; */
     
@@ -21,8 +22,9 @@ body{
 #heading-container{
     margin-left: 7%;
     margin-right: 7%;
-    margin-top:-3rem;
+    margin-top:-12rem;
     /* background-color: turquoise; */
+    color: white;
 }
 
 #boldText{
@@ -37,8 +39,8 @@ body{
     padding-right: 7%;
     margin-left: 7%;
     margin-right: 7%;
-    margin-top:-3rem;
-    margin-bottom: 10rem;
+    margin-top:2rem;
+    margin-bottom: 20rem;
     background-color: white;
     border: 1px solid #E0E0E0;
     border-radius: 12px;
@@ -187,4 +189,9 @@ h1{
 #linkList{
     padding-left: 7%;
     padding-right: 7%;
+}
+
+#page-content{
+    max-width: 50rem;
+    margin: 0 auto
 }
