@@ -109,8 +109,8 @@ function getLocation() {
 
         thingsToDo.setAttribute("href", `https://www.google.com/maps/search/things+to+do/@${halfwayPointLat},${halfwayPointLng},15z`);
         restaurants.setAttribute("href", `https://www.google.com/maps/search/restaurants/@${halfwayPointLat},${halfwayPointLng},15z`);
-        coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops/@${halfwayPointLat},${halfwayPointLng},15z`);
-        museums.setAttribute("href", `https://www.google.com/maps/search/museums/@${halfwayPointLat},${halfwayPointLng},15z`);
+        coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops/@${halfwayPointLat},${halfwayPointLng},15z&forceweb=1`);
+        museums.setAttribute("href", `https://www.google.com/maps/search/museums/@${halfwayPointLat},${halfwayPointLng},15z&center=${halfwayPointLat},${halfwayPointLng}`);
         bookStores.setAttribute("href", `https://www.google.com/maps/search/book+stores/@${halfwayPointLat},${halfwayPointLng},15z`);
         libraries.setAttribute("href", `https://www.google.com/maps/search/libraries/@${halfwayPointLat},${halfwayPointLng},15z`);
         scenicViews.setAttribute("href", `https://www.google.com/maps/search/scenic+views/@${halfwayPointLat},${halfwayPointLng},15z`);
@@ -123,7 +123,7 @@ function getLocation() {
 })
 
 // https://www.google.com/maps/search/restaurants/@${latitude},${longitude},15z
-
+// https://www.google.com/maps/search/Restaurants/@27.8010528,-101.3154739,12z/data=!3m1!4b1!4m6!2m5!3m4!2zMjfCsDQ4JzA1LjYiTiAxMDHCsDEzJzM4LjMiVw!4m2!1d-101.2272986!2d27.8015499?entry=ttu
 
 }
 
