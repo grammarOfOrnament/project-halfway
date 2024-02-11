@@ -104,21 +104,50 @@ function getLocation() {
         console.log("Midpoint Latitude: " + halfwayPointLat);
         console.log("Midpoint Longitude: " + halfwayPointLng);
 
-        halfwayPointCoordinates.innerHTML = `Halfway between ${firstLocationInputElement.value} and ${secondLocationInputElement.value} is <b>${halfwayPointLat}, ${halfwayPointLng}</b>`;
+        halfwayPointCoordinates.innerHTML = `Halfway between ${firstLocationInputElement.value} and ${secondLocationInputElement.value} is <b>${halfwayPointLat}, ${halfwayPointLng}</b>. Explore on the map to find places nearby.`;
         viewHalfwayPoint.setAttribute("href", `https://www.google.com/maps/search/${halfwayPointLat},+${halfwayPointLng}/@${halfwayPointLat},${halfwayPointLng},13z`);
 
-        thingsToDo.setAttribute("href", `https://www.google.com/maps/search/things+to+do/@${halfwayPointLat},${halfwayPointLng},15z`);
-        restaurants.setAttribute("href", `https://www.google.com/maps/search/restaurants/@${halfwayPointLat},${halfwayPointLng},15z`);
-        coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops/@${halfwayPointLat},${halfwayPointLng},15z&forceweb=1`);
-        museums.setAttribute("href", `https://www.google.com/maps/search/museums/@${halfwayPointLat},${halfwayPointLng},15z&center=${halfwayPointLat},${halfwayPointLng}`);
-        bookStores.setAttribute("href", `https://www.google.com/maps/search/book+stores/@${halfwayPointLat},${halfwayPointLng},15z`);
-        libraries.setAttribute("href", `https://www.google.com/maps/search/libraries/@${halfwayPointLat},${halfwayPointLng},15z`);
-        scenicViews.setAttribute("href", `https://www.google.com/maps/search/scenic+views/@${halfwayPointLat},${halfwayPointLng},15z`);
-        parks.setAttribute("href", `https://www.google.com/maps/search/parks/@${halfwayPointLat},${halfwayPointLng},15z`);
-        shopping.setAttribute("href", `https://www.google.com/maps/search/shopping/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // thingsToDo.setAttribute("href", `https://www.google.com/maps/search/things+to+do/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // restaurants.setAttribute("href", `https://www.google.com/maps/search/restaurants/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // coffeeShops.setAttribute("href", `https://www.google.com/maps/search/coffee+shops/@${halfwayPointLat},${halfwayPointLng},15z&forceweb=1`);
+        // museums.setAttribute("href", `https://www.google.com/maps/search/museums/@${halfwayPointLat},${halfwayPointLng},15z&center=${halfwayPointLat},${halfwayPointLng}`);
+        // bookStores.setAttribute("href", `https://www.google.com/maps/search/book+stores/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // libraries.setAttribute("href", `https://www.google.com/maps/search/libraries/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // scenicViews.setAttribute("href", `https://www.google.com/maps/search/scenic+views/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // parks.setAttribute("href", `https://www.google.com/maps/search/parks/@${halfwayPointLat},${halfwayPointLng},15z`);
+        // shopping.setAttribute("href", `https://www.google.com/maps/search/shopping/@${halfwayPointLat},${halfwayPointLng},15z`);
 
         results.setAttribute("style", "display: block;");
-        linkList.setAttribute("style", "display: block;");
+        // linkList.setAttribute("style", "display: block;");
+
+        // Function to perform reverse geocoding
+function reverseGeocode(latitude, longitude) {
+    console.log("Reverse Geocoding...");
+    
+        // Create a geocoder object
+        var geocoder = new google.maps.Geocoder();
+    
+        // Create a LatLng object with the provided latitude and longitude
+        var latlng = new google.maps.LatLng(latitude, longitude);
+    
+        // Perform reverse geocoding
+        geocoder.geocode({'location': latlng}, function(results, status) {
+            if (status === 'OK') {
+                if (results[0]) {
+                    // Get the formatted address from the results
+                    var formattedAddress = results[0].formatted_address;
+                    
+                    // Do something with the formatted address
+                    console.log('Reverse geocoded address:', formattedAddress);
+                } else {
+                    console.log('No results found');
+                }
+            } else {
+                console.log('Geocoder failed due to:', status);
+            }
+        });
+    }
+    reverseGeocode(halfwayPointLat, halfwayPointLng);
     })
 })
 
